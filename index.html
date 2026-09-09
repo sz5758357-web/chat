@@ -1,57 +1,82 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Mini Browser</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="browser">
+    <header class="browser-header">
 
-        <div class="topbar">
-            <button id="back" title="Wstecz">←</button>
-            <button id="forward" title="Dalej">→</button>
-            <button id="reload" title="Odśwież">↻</button>
-            <button id="home" title="Strona główna">⌂</button>
+        <div class="tabs-bar">
 
-            <div class="address-box">
-                <span class="lock">🔒</span>
+            <div id="tabs"></div>
+
+            <button
+                id="newTab"
+                class="new-tab"
+                title="Nowa karta"
+            >
+                +
+            </button>
+
+        </div>
+
+        <div class="toolbar">
+
+            <button id="back" title="Wstecz">
+                ←
+            </button>
+
+            <button id="forward" title="Dalej">
+                →
+            </button>
+
+            <button id="reload" title="Odśwież">
+                ↻
+            </button>
+
+            <button id="home" title="Strona główna">
+                ⌂
+            </button>
+
+            <div class="address-wrapper">
+
+                <span class="security">
+                    🔒
+                </span>
+
                 <input
                     id="address"
                     type="text"
-                    placeholder="Wpisz adres lub wyszukaj..."
+                    spellcheck="false"
                     autocomplete="off"
+                    placeholder="Wpisz adres lub wyszukaj..."
                 >
+
             </div>
 
-            <button id="go" title="Przejdź">➜</button>
+            <button id="go" title="Przejdź">
+                →
+            </button>
+
         </div>
 
-        <div class="page">
-            <iframe
-                id="browserFrame"
-                src="https://example.com"
-                title="Mini przeglądarka">
-            </iframe>
+    </header>
 
-            <div id="error" class="error">
-                <div class="error-icon">⚠️</div>
-                <h2>Nie można wyświetlić tej strony</h2>
-                <p>
-                    Ta witryna może blokować wyświetlanie
-                    wewnątrz innych stron.
-                </p>
-            </div>
-        </div>
+    <div id="loadingBar"></div>
 
-        <div class="status">
-            <span id="statusText">Gotowe</span>
-        </div>
+    <script src="renderer.js"></script>
 
-    </div>
-
-    <script src="script.js"></script>
 </body>
+
 </html>
