@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Browser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="browser">
+
+        <div class="topbar">
+            <button id="back" title="Wstecz">←</button>
+            <button id="forward" title="Dalej">→</button>
+            <button id="reload" title="Odśwież">↻</button>
+            <button id="home" title="Strona główna">⌂</button>
+
+            <div class="address-box">
+                <span class="lock">🔒</span>
+                <input
+                    id="address"
+                    type="text"
+                    placeholder="Wpisz adres lub wyszukaj..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <button id="go" title="Przejdź">➜</button>
+        </div>
+
+        <div class="page">
+            <iframe
+                id="browserFrame"
+                src="https://example.com"
+                title="Mini przeglądarka">
+            </iframe>
+
+            <div id="error" class="error">
+                <div class="error-icon">⚠️</div>
+                <h2>Nie można wyświetlić tej strony</h2>
+                <p>
+                    Ta witryna może blokować wyświetlanie
+                    wewnątrz innych stron.
+                </p>
+            </div>
+        </div>
+
+        <div class="status">
+            <span id="statusText">Gotowe</span>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
